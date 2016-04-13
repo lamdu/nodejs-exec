@@ -1,19 +1,22 @@
 name:                nodejs-exec
 version:             0.1.0.0
-synopsis:            Simple project template from stack
-description:         Please see README.md
-homepage:            https://github.com/githubuser/nodejs-exec#readme
+synopsis:            Package providing a nodejs installation.
+description:         NodeJS dependency in a .cabal package.
+                     Contains a NodeJS version with tailcalls support.
+homepage:            https://github.com/lamdu/nodejs-exec
 license:             BSD3
 license-file:        LICENSE
-author:              Author name here
-maintainer:          example@example.com
-copyright:           2016 Author name here
-category:            Web
-build-type:          Simple
-cabal-version:       >=1.10
+author:              Yair Chuchem
+maintainer:          yairchu@gmail.com
+copyright:           2016 Yair
+category:            Foreign
+build-type:          Custom
+cabal-version:       >=1.8
+data-files:          node/node
 
-executable nodejs-exec
+library
   hs-source-dirs:      src
-  main-is:             Main.hs
+  Exposed-modules:     System.NodeJS.Path
+  Other-modules:       Paths_nodejs_exec
   default-language:    Haskell2010
-  build-depends:       base >= 4.7 && < 5
+  build-depends:       base >= 4
