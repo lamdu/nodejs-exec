@@ -18,6 +18,7 @@ buildNode verbosity =
         e <- doesFileExist nodeRelPath
         unless e $
             do
+                rawSystemExit verbosity "git" ["submodule", "update", "--init", "--recursive"]
                 setCurrentDirectory "node"
                 rawSystemExit verbosity "./configure" ["--prefix=/tmp"]
                 rawSystemExit verbosity "make" ["-j4"]
