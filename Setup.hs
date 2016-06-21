@@ -17,12 +17,7 @@ buildNode verbosity =
     do
         e <- doesFileExist nodeRelPath
         unless e $
-            do
-                rawSystemExit verbosity "git" ["submodule", "update", "--init", "--recursive"]
-                setCurrentDirectory "node"
-                rawSystemExit verbosity "./configure" ["--prefix=/tmp"]
-                rawSystemExit verbosity "make" ["-j4"]
-                setCurrentDirectory ".."
+            rawSystemExit verbosity "sh" ["build_node.sh"]
 
 postInstNode :: Verbosity -> PackageDescription -> LocalBuildInfo -> IO ()
 postInstNode verbosity pkgDesc localBuildInfo =
