@@ -12,7 +12,6 @@ copyright:           2016 Yair
 category:            Foreign
 build-type:          Custom
 cabal-version:       >=1.8
-build-depends:       node/node
 data-files:          node/node
 
 library
