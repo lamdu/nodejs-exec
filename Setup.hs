@@ -17,7 +17,7 @@ buildNode verbosity =
     do
         e <- doesFileExist nodeRelPath
         unless e $
-            rawSystemExit verbosity "sh" ["build_node.sh"]
+            rawSystemExit verbosity "bash" ["build_node.sh"]
 
 postInstNode :: Verbosity -> PackageDescription -> LocalBuildInfo -> IO ()
 postInstNode verbosity pkgDesc localBuildInfo =

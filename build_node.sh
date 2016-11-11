@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # adapted from https://apple.stackexchange.com/a/123408/11374
 function version { echo "${@//v}" | awk -F. '{ printf("%d%03d%03d%03d\n", $1,$2,$3,$4); }'; }
