@@ -12,7 +12,7 @@ copyright:           2016 Yair
 category:            Foreign
 build-type:          Custom
 cabal-version:       >=1.8
-data-files:          node/node
+data-files:          bin/node
 
 library
   hs-source-dirs:      src

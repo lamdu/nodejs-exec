@@ -10,7 +10,7 @@ import System.Directory
 import System.FilePath ((</>))
 
 nodeRelPath :: FilePath
-nodeRelPath = "node/node"
+nodeRelPath = "bin/node"
 
 buildNode :: Verbosity -> IO ()
 buildNode verbosity =
