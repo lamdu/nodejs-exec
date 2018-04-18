@@ -6,8 +6,10 @@ mkdir -p bin
 function version { echo "${@//v}" | awk -F. '{ printf("%d%03d%03d%03d\n", $1,$2,$3,$4); }'; }
 
 NODE_VERSION=`node --version`
+VER=$(version "$NODE_VERSION")
 
-if [ $(version "$NODE_VERSION") -ge $(version "v6.2.1") ]; then
+if [[ $(version "v6.2.1") -le $VER && $VER -lt $(version "v8.0.0") ]]; then
+    # According to http://node.green/ support of tail calls exists in these versions
     echo "Using existing system node $NODE_VERSION"
     cp `which node` bin/node
 else

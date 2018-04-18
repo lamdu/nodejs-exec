@@ -11,5 +11,5 @@ extra-package-dbs: []
 nix:
   enable: false
   packages:
-  - nodejs-8_x
+  - nodejs-6_x
   - which
