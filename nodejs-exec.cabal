@@ -12,7 +12,10 @@ copyright:           2016 Yair
 category:            Foreign
 build-type:          Custom
 cabal-version:       >=1.8
-data-files:          bin/node
+if os(windows)
+  data-files:          bin/node.exe
+else
+  data-files:          bin/node
 
 custom-setup
   setup-depends:
