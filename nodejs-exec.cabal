@@ -11,12 +11,12 @@ maintainer:          yairchu@gmail.com
 copyright:           2016 Yair
 category:            Foreign
 build-type:          Custom
-cabal-version:       >=1.8
-if os(windows)
-  data-files:          bin/node.exe
-else
-  data-files:          bin/node
-
+cabal-version:       >=1.10
+-- Unfortunately conditional data files are unsupported, but we can
+-- list all options and get a few harmless warnings :-(
+data-files:
+  bin/node.exe
+  bin/node
 custom-setup
   setup-depends:
     base, Cabal, directory, filepath
