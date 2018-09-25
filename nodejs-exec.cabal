@@ -14,6 +14,10 @@ build-type:          Custom
 cabal-version:       >=1.8
 data-files:          bin/node
 
+custom-setup
+  setup-depends:
+    base, Cabal, directory, filepath
+
 library
   hs-source-dirs:      src
   Exposed-modules:     System.NodeJS.Path
