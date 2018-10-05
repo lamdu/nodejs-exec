@@ -11,7 +11,7 @@ VER=$(version "$NODE_VERSION")
 if [[ $(version "v6.2.1") -le $VER && $VER -lt $(version "v8.0.0") ]]; then
     # According to http://node.green/ support of tail calls exists in these versions
     echo "Using existing system node $NODE_VERSION"
-    cp "$(which node)" bin/node
+    cp "$(which node)" bin/node.exe
 else
     echo "Building nodejs from source"
     # node not available or too old. Build from source.
@@ -20,5 +20,5 @@ else
     ./configure --prefix=/tmp
     make -j4
     cd ..
-    cp node/node bin/node
+    cp node/node bin/node.exe
 fi

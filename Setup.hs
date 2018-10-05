@@ -11,11 +11,7 @@ import System.Directory
 import System.FilePath ((</>))
 
 nodeRelPath :: FilePath
-#ifdef mingw32_HOST_OS
 nodeRelPath = "bin/node.exe"
-#else
-nodeRelPath = "bin/node"
-#endif
 
 buildNode :: Verbosity -> IO ()
 buildNode verbosity =

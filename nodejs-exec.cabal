@@ -16,7 +16,6 @@ cabal-version:       >=1.10
 -- list all options and get a few harmless warnings :-(
 data-files:
   bin/node.exe
-  bin/node
 custom-setup
   setup-depends:
     base, Cabal, directory, filepath

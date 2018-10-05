@@ -5,4 +5,4 @@ module System.NodeJS.Path
 import Paths_nodejs_exec (getDataFileName)
 
 path :: IO FilePath
-path = getDataFileName "bin/node"
+path = getDataFileName "bin/node.exe"
