@@ -15,7 +15,7 @@ if [[ $(version "v6.2.1") -le $VER && $VER -lt $(version "v8.0.0") ]]; then
 else
     echo "Building nodejs from source"
     # node not available or too old. Build from source.
-    git clone --depth 1 -b v6.11.3 https://github.com/nodejs/node.git
+    git clone --depth 1 -b v6.x https://github.com/nodejs/node.git
     cd node
     ./configure --prefix=/tmp
     make -j4
