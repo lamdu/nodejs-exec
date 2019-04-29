@@ -13,18 +13,23 @@ import System.FilePath ((</>))
 nodeRelPath :: FilePath
 nodeRelPath = "bin/node.exe"
 
+output :: Verbosity -> String -> IO ()
+output verbosity msg
+    | verbosity >= verbose = putStrLn msg
+    | otherwise = pure ()
+
 buildNode :: Verbosity -> IO ()
 buildNode verbosity =
     do
         e <- doesFileExist nodeRelPath
-        unless e $
-            rawSystemExit verbosity "bash" ["build_node.sh"]
+        if e
+            then output verbosity $ "Using node from " ++ show nodeRelPath
+            else rawSystemExit verbosity "bash" ["build_node.sh"]
 
 postInstNode :: Verbosity -> PackageDescription -> LocalBuildInfo -> IO ()
 postInstNode verbosity pkgDesc localBuildInfo =
     do
-        when (verbosity >= verbose) $
-            putStrLn $ "Setting file executable " ++ show path
+        output verbosity $ "Setting file executable " ++ show path
         setFileExecutable path
     where
         path =
