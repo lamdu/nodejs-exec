@@ -7,9 +7,3 @@ extra-deps: []
 flags: {}
 
 extra-package-dbs: []
-
-nix:
-  enable: false
-  packages:
-  - nodejs-6_x
-  - which
