@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -eu
 mkdir -p bin
 
 # adapted from https://apple.stackexchange.com/a/123408/11374
@@ -9,8 +10,9 @@ NODE_VERSION=`node --version`
 VER=$(version "$NODE_VERSION")
 
 if [[ $(version "v6.2.1") -le $VER ]]; then
-    echo "Using existing system node $NODE_VERSION"
-    cp "$(which node)" bin/node.exe
+    FROM="$(type -p node)"
+    echo "Using existing system node $NODE_VERSION from $FROM"
+    cp "$FROM" bin/node.exe
 else
     echo "Building nodejs from source"
     # node not available or too old. Build from source.
