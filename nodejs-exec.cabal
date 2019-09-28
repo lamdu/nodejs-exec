@@ -1,5 +1,5 @@
 name:                nodejs-exec
-version:             0.1.0.0
+version:             0.2.0.0
 synopsis:            Package providing a nodejs installation.
 description:         NodeJS dependency in a .cabal package.
                      Contains a NodeJS version with tailcalls support.

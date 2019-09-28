@@ -1,6 +1,5 @@
 {-# LANGUAGE CPP #-}
 {-# OPTIONS -Wall #-}
-import Control.Monad
 import Distribution.PackageDescription
 import Distribution.Simple
 import Distribution.Simple.LocalBuildInfo
